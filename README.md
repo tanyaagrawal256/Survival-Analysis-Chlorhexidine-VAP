@@ -81,58 +81,47 @@ Python scripts in src/ perform:
 
 ➡️ No predictors were statistically significant.
 
-**📈 Results Summary**
+## 📈 Results Summary
 
-*KM curves:
+### **Kaplan–Meier Curves**
+- 0.20% chlorhexidine shows **slightly better VAP-free survival**
+- Differences are **not statistically significant**
 
-0.20% CHX shows slightly better VAP-free survival
+### **Log-Rank Test**
+- **p = 0.21**
+- ➡️ Insufficient evidence of a difference between survival curves
 
-Differences are not statistically significant
+### **Cox Proportional Hazards Model**
+- **HR = 0.45**, but with wide confidence intervals  
+- ➡️ Not statistically significant (p = 0.48)
 
-*Log-rank test:
+### **Power Note**
+- Only **6 VAP events** recorded  
+- ➡️ Statistical power is limited
 
-p = 0.21 → insufficient evidence of difference
+---
 
-*Cox model:
-
-HR = 0.45, but wide CI and non-significant p-value
-
-*Power note:
-Only 6 VAP events occurred → statistical power is limited.
-
-🧠 Conclusion
+## 🧠 Conclusion
 
 Over a 10-day ICU follow-up period:
 
-0.20% chlorhexidine showed a mild numerical improvement
+- **0.20% chlorhexidine** showed a mild numerical improvement  
+- **No statistical evidence** supports its superiority over **0.12%**  
+- **Age** and **APACHE II score** were **not significant predictors**  
+- Both concentrations appear to perform similarly  
+- Larger sample sizes would be required to detect meaningful differences
 
-No statistical evidence supports its superiority over 0.12%
+---
 
-Age and APACHE II were not significant predictors of VAP
+## 📂 Repository Structure
 
-This study suggests that, within this dataset, both concentrations perform similarly, and larger trials would be needed to detect meaningful differences.
-
-📂 Repository Structure
-.
-├── data/                     # Raw dataset (Excel)
-├── notebooks/               # Jupyter/Colab notebook
-├── results/                 # Output plots & result files
-├── src/                     # Modular Python scripts
-│   ├── data_preprocessing.py
-│   ├── eda.py
-│   ├── km_analysis.py
-│   ├── logrank_test.py
-│   └── cox_model.py
+├── data/ # Raw dataset (Excel)
+├── notebooks/ # Jupyter/Colab notebook
+├── results/ # Output plots & result files
+├── src/ # Modular Python scripts
+│ ├── data_preprocessing.py
+│ ├── eda.py
+│ ├── km_analysis.py
+│ ├── logrank_test.py
+│ └── cox_model.py
 └── README.md
-
-▶️ How to Run the Code (Colab/Jupyter)
-git clone https://github.com/tanyaagrawal256/Survival-Analysis-Chlorhexidine-VAP.git
-cd Survival-Analysis-Chlorhexidine-VAP
-
-
-In notebook:
-
-from data_preprocessing import load_and_prepare_data
-from km_analysis import km_overall, km_by_trial_arm
-from logrank_test import logrank_by_trial_arm
-from cox_model import fit_cox_model, plot_cox_forest
