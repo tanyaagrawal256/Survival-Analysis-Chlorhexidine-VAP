@@ -1,5 +1,6 @@
-Survival-Analysis-Chlorhexidine-VAP
-Survival analysis of 0.12% vs 0.20% chlorhexidine in preventing ventilator-associated pneumonia (VAP)
+**Survival-Analysis-Chlorhexidine-VAP**
+
+***Survival analysis of 0.12% vs 0.20% chlorhexidine in preventing ventilator-associated pneumonia (VAP)***
 
 This repository contains a complete capstone project evaluating whether 0.20% chlorhexidine is more effective than 0.12% chlorhexidine in preventing ventilator-associated pneumonia (VAP) among mechanically ventilated ICU patients.
 The project applies standard survival analysis methods including:
