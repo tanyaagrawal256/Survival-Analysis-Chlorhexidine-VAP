@@ -30,3 +30,4 @@ def plot_cox_forest(cph: CoxPHFitter) -> None:
     plt.xlabel("log(HR) (95% CI)")
     plt.tight_layout()
     plt.show()
+
