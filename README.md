@@ -59,18 +59,25 @@ Python scripts in src/ perform:
 
 *Confidence intervals overlapped → no significant difference
 
-**3. Log-Rank Test**
-Statistic	   Value
-χ²	         1.56
-p-value	     0.21
+### 3. Log-Rank Test
 
-➡️ No statistically significant difference in survival curves.
+| Statistic | Value |
+|----------|--------|
+| χ²       | **1.56** |
+| p-value  | **0.21** |
 
-**4. Cox Proportional Hazards Model**
-Predictor	            Hazard Ratio (HR)	    Interpretation	                  p-value
-CHX 0.20% vs 0.12%	  0.45	                55% ↓ hazard (not significant)	  0.48
-Age	                  0.97	                No meaningful effect	            0.19
-APACHE II Score	      0.95	                No meaningful effect	            0.36
+➡️ **No statistically significant difference in survival curves.**
+
+---
+
+### 4. Cox Proportional Hazards Model
+
+| Predictor                | Hazard Ratio (HR) | Interpretation                     | p-value |
+|--------------------------|-------------------|-------------------------------------|---------|
+| **CHX 0.20% vs 0.12%**   | **0.45**           | 55% ↓ hazard (not significant)      | 0.48    |
+| **Age**                  | 0.97               | No meaningful effect                | 0.19    |
+| **APACHE II Score**      | 0.95               | No meaningful effect                | 0.36    |
+
 
 ➡️ No predictors were statistically significant.
 
