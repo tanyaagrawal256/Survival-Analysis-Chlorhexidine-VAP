@@ -115,13 +115,47 @@ Over a 10-day ICU follow-up period:
 
 ## 📂 Repository Structure
 
-├── data/ # Raw dataset (Excel)
-├── notebooks/ # Jupyter/Colab notebook
-├── results/ # Output plots & result files
-├── src/ # Modular Python scripts
-│ ├── data_preprocessing.py
-│ ├── eda.py
-│ ├── km_analysis.py
-│ ├── logrank_test.py
-│ └── cox_model.py
+Survival-Analysis-Chlorhexidine-VAP/
+├── data/                       # Raw dataset (Excel)
+│   └── Data form Chlorhexidine Trial.xlsx
+├── notebooks/                  # Jupyter/Colab notebook
+│   └── Survival_capstone.ipynb
+├── results/                    # Output plots & result files
+│   └── analysis_result_plots.pdf
+├── src/                        # Modular Python scripts
+│   ├── data_preprocessing.py
+│   ├── eda.py
+│   ├── km_analysis.py
+│   ├── logrank_test.py
+│   └── cox_model.py
 └── README.md
+
+**▶️ How to Run the Analysis (Colab/Jupyter)**
+1. Clone the repository
+git clone https://github.com/tanyaagrawal256/Survival-Analysis-Chlorhexidine-VAP.git
+cd Survival-Analysis-Chlorhexidine-VAP
+
+2. Import modules in your notebook
+from data_preprocessing import load_and_prepare_data
+from km_analysis import km_overall, km_by_trial_arm
+from logrank_test import logrank_by_trial_arm
+from cox_model import fit_cox_model, plot_cox_forest
+
+3. Run the workflow
+df = load_and_prepare_data()
+
+km_overall(df)
+km_by_trial_arm(df)
+
+logrank_by_trial_arm(df)
+
+cph = fit_cox_model(df)
+plot_cox_forest(cph)
+
+**📜 License**
+
+This project is for academic and educational purposes.
+
+**🙌 Acknowledgements**
+
+Developed as part of a survival analysis capstone on chlorhexidine use in ICU VAP prevention.
