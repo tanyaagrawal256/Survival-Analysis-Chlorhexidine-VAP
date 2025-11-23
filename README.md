@@ -5,38 +5,39 @@
 This repository contains a complete capstone project evaluating whether 0.20% chlorhexidine is more effective than 0.12% chlorhexidine in preventing ventilator-associated pneumonia (VAP) among mechanically ventilated ICU patients.
 The project applies standard survival analysis methods including:
 
-Kaplan–Meier curves
+*Kaplan–Meier curves
 
-Log-rank hypothesis testing
+*Log-rank hypothesis testing
 
-Cox proportional hazards modeling
+*Cox proportional hazards modeling
 
-📌 Project Summary
+📌 **Project Summary**
 
 This analysis uses patient-level ICU data from a 10-day chlorhexidine oral-care trial.
 The goals were to:
 
-Compare VAP-free survival between 0.12% and 0.20% CHX groups
+*Compare VAP-free survival between 0.12% and 0.20% CHX groups
 
-Estimate whether the hazard (risk) of VAP differs between concentrations
+*Estimate whether the hazard (risk) of VAP differs between concentrations
 
-Evaluate the role of age and APACHE II score as risk factors
+*Evaluate the role of age and APACHE II score as risk factors
 
-🛑 Key Finding
+🛑 **Key Finding**
 
 Although 0.20% chlorhexidine showed a numerical trend toward better VAP-free survival,
 ➡️ None of the differences reached statistical significance.
 
-📊 Methods Overview
-1. Data Preparation
+📊 **Methods Overview**
 
-Event = 1 if VAP occurred
+**1. Data Preparation**
 
-Censoring = 0 if patient did not develop VAP during follow-up
+*Event = 1 if VAP occurred
 
-Duration = last clinical day recorded (Day 1–10)
+*Censoring = 0 if patient did not develop VAP during follow-up
 
-Treatment coding
+*Duration = last clinical day recorded (Day 1–10)
+
+*Treatment coding
 
 0 → CHX 0.12%
 
@@ -44,24 +45,24 @@ Treatment coding
 
 Python scripts in src/ perform:
 
-Cleaning
+*Cleaning
 
-Survival variable creation
+*Survival variable creation
 
-Group encoding
+*Group encoding
 
-2. Kaplan–Meier Survival Analysis
+**2. Kaplan–Meier Survival Analysis**
 
-KM curves generated for both CHX concentrations
+*KM curves generated for both CHX concentrations
 
-Slight numerical advantage for 0.20%
+*Slight numerical advantage for 0.20%
 
-Confidence intervals overlapped → no significant difference
+*Confidence intervals overlapped → no significant difference
 
-3. Log-Rank Test
-Statistic	Value
-χ²	1.56
-p-value	0.21
+**3. Log-Rank Test**
+Statistic	   Value
+χ²	         1.56
+p-value	     0.21
 
 ➡️ No statistically significant difference in survival curves.
 
@@ -73,23 +74,23 @@ APACHE II Score	0.95	No meaningful effect	0.36
 
 ➡️ No predictors were statistically significant.
 
-📈 Results Summary
+**📈 Results Summary**
 
-KM curves:
+*KM curves:
 
 0.20% CHX shows slightly better VAP-free survival
 
 Differences are not statistically significant
 
-Log-rank test:
+*Log-rank test:
 
 p = 0.21 → insufficient evidence of difference
 
-Cox model:
+*Cox model:
 
 HR = 0.45, but wide CI and non-significant p-value
 
-Power note:
+*Power note:
 Only 6 VAP events occurred → statistical power is limited.
 
 🧠 Conclusion
